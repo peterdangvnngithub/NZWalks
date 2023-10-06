@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using NZWalks.API.Models.DTO;
+using NZWalks.API.Models.Domain;
 
 namespace NZWalks.API.Mappings
 {
@@ -6,17 +8,15 @@ namespace NZWalks.API.Mappings
     {
         protected internal AutoMapperProfiles()
         {
-            CreateMap<>
+            CreateMap<Region, RegionDto>().ReverseMap();
+            CreateMap<AddRegionRequestDto, Region>().ReverseMap();
+            CreateMap<UpdateRegionRequestDto, Region>().ReverseMap();
+
+            CreateMap<Walk, WalkDto>().ReverseMap();
+            CreateMap<AddWalkRequestDto, Walk>().ReverseMap();
+            CreateMap<UpdateWalkRequestDto, Walk>().ReverseMap();
+
+            CreateMap<Difficulty, DifficultyDto>().ReverseMap();
         }
-    }
-
-    public class UserDTO
-    {
-        public string FullName { get; set; }
-    }
-
-    public class UserDomain
-    {
-        public string FullName { get; set; }
     }
 }
